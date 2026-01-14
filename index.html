@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dystopie</title>
+  <style>
+    :root {
+      --accent: #0b74ff;
+      --bg: #f5f6f8;
+      --card: #ffffff;
+      --gap: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, "Segoe UI", Roboto, Arial;
+      background-image: url(blame2.jpg);
+      background-size: 100vw;
+      padding: 2vw;
+      font-size: 1.5vw;
+    }
+
+    span {
+      color: white;
+    }
+    .wrap {
+      margin: 0 auto;
+      gap: var(--gap);
+      color: white;
+    }
+
+    .accordion {
+      width: 100%;
+      background: var(--card);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 2em black;
+    }
+
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 14px 16px;
+      font-weight: 600;
+      font-size: 3.5vw;
+      border: none;
+      background: linear-gradient(180deg, rgba(11,116,255,0.06), transparent);
+      cursor: pointer;
+    }
+
+    .caret {
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      transform-origin: center;
+      transition: transform 0.25s ease;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(-45deg);
+      margin-left: 12px;
+    }
+
+    .accordion.open .caret {
+      transform: rotate(45deg);
+    }
+
+    .accordion-content {
+      padding: 0 1vw;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.28s ease, padding 0.28s ease;
+    }
+
+    .accordion.open .accordion-content {
+      padding: 12px 1vw 18px 1vw;
+    }
+
+    .accordion-content p { margin: 0 0 12px 0; line-height: 1.45; }
+
+    .dominante {
+      display: inline-block;
+      font-weight: bold;
+      background-color: white;
+      color: black;
+      border-radius: 25px;
+      padding: 0 5px;
+      box-shadow: 5px 5px black;
+    }
+    .rubrique {
+      background-color: white;
+      color: black;
+      margin: 1em 0;
+      padding: 0 1vw;
+      width: 100%;
+      border-radius: 8px;
+    }
+    p.extrait {
+      text-align: justify;
+      margin: 0 5vw;
+      text-indent: 2vw each-line;
+    }
+    .video {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="rubrique" style="padding: 1em; box-shadow: 0 0 2em black; opacity: 0.9;">
+    <h1 style="text-align: center;">Dystopie</h1>
+    <p>Thème : Progrès et rêves scientifiques - Dénoncer les travers de la société</p>
+    <ul>
+      <li>S'interroger sur l'idée du progrès scientifique, cher au XIXe siècle, tantôt exalté et mythifié, tantôt objet de répulsion ou de désillusion.</li>
+      <li>Poser la question des rapports entre les sciences et la littérature, notamment à travers des œuvres mettant en scène la figure du savant, créateur du bonheur de demain ou figure malfaisante et diabolique.</li>
+      <li>Interroger l'ambition de l'art à penser, imaginer voire anticiper le progrès scientifique et technologique.</li>
+    </ul>
+    <p><a href="https://eduscol.education.fr/document/30547/download">Progrès et rêves scientifiques - Panels de lecture</a></p>
+    <br><p>Jeu Quiz (à la fin de chaque séance)</p>
+    <ul>
+      <li>questions à choix type jeu-télé / kahoot</li>
+      <li><strong>tous les élèves</strong> choisissent leur réponse en levant successivement la main à chaque réponse</li>
+      <li>les questions portent sur des notions de la séance ; permet la "revue" <i>(plus que la révision)</i> des points abordés lors de la séance <i>(<strong>évaluation formative</strong> pour moi)</i></li>
+    </ul>
+  </div>
+  <div class="wrap">
+    <div class="accordion" id="acc1" style="background-color: #003f5c;">
+      <button class="accordion-header" aria-expanded="false" aria-controls="content1">
+        <span>🏷️ 1 — De l'Utopie à la Dystopie</span>
+        <span class="caret" aria-hidden="true"></span>
+      </button>
+      <div class="accordion-content" id="content1" role="region" aria-labelledby="acc1">
+        <p>⚠️ présenter les attendus : éval finale</p>
+        <p class="dominante">📖 lecture</p>&emsp;<p class="dominante">🎓 Comprendre qu'Utopie et Dystopie sont deux faces d'une même pièce</p>
+        <div class="rubrique">
+          <p class="extrait"><br><br>
+            <u><strong>V - La Cité de l'Acier</strong></u><br><br>
+            Si le touriste, arrêté dans ces solitudes, prête l’oreille aux bruits de la nature, il n’entend pas, comme dans les sentiers de l’Oberland, le murmure harmonieux de la vie mêlé au grand silence de la montagne. Mais il saisit au loin les coups sourds du marteau-pilon, et, sous ses pieds, les détonations étouffées de la poudre. Il semble que le sol soit machiné comme les dessous d’un théâtre, que ces roches gigantesques sonnent creux et qu’elles peuvent d’un moment à l’autre s’abîmer dans de mystérieuses profondeurs.
+            Les chemins, macadamisés de cendres et de coke, s’enroulent aux flancs des montagnes. Sous les touffes d’herbes jaunâtres, de petits tas de scories, diaprées de toutes les couleurs du prisme, brillent comme des yeux de basilic. Ca et là, un vieux puits de mine abandonné, déchiqueté par les pluies, déshonoré par les ronces, ouvre sa gueule béante, gouffre sans fond, pareil au cratère d’un volcan éteint. L’air est chargé de fumée et pèse comme un manteau sombre sur la terre. Pas un oiseau ne le traverse, les insectes mêmes semblent le fuir, et de mémoire d’homme on n’y a vu un papillon.<br>
+            [...]<br>
+            C’est au centre de ces villages, au pied même des Coals-Butts, inépuisables montagnes de charbon de terre, que s’élève une masse sombre, colossale, étrange, une agglomération de bâtiments réguliers percés de fenêtres symétriques, couverts de toits rouges, surmontés d’une forêt de cheminées cylindriques, et qui vomissent par ces milles bouches des torrents continus de vapeurs fuligineuses. Le ciel en est voilé d’un rideau noir, sur lequel passent par instants de rapides éclairs rouges. Le vent apporte un grondement lointain, pareil à celui d’un tonnerre ou d’une grosse houle, mais plus régulier et plus grave.<br>
+            Cette masse est Stahlstadt, la Cité de l’Acier, la ville allemande, propriété personnelle de Herr Schultze, l’ex-professeur de chimie d’Iéna, devenu, de par les millions de la Bégum, le plus grand travailleur de fer et, spécialement, le plus grand fondeur de canons des deux mondes.
+          </p>
+          <p style="text-align: right; text-decoration: underline;"><br>Les Cinq Cents Millions de la Bégum - Jules Verne (1879)</p><br>
+        </div>
+        <div class="rubrique">
+          <p class="extrait"><br><br>
+            <u><strong>XI - France-Ville</strong></u><br><br>
+            Il était sept heures du soir.<br>
+            Cachée dans d’épais massifs de laurier-rose et de tamarins, la cité s’allongeait gracieusement au pied des Cascades-Mounts et présentait ses quais de marbre aux vagues courtes du Pacifique, qui venaient les caresser sans bruit. Les rues, arrosées avec soin, rafraîchies par la brise, offraient aux yeux le spectacle le plus riant et le plus animé. Les arbres qui les ombrageaient bruissaient doucement. Les pelouses verdissaient. Les fleurs des parterres, rouvrant leurs corolles, exhalaient toutes à la fois leurs parfums. Les maisons souriaient, calmes et coquettes dans leur blancheur. L’air était tiède, le ciel bleu comme la mer, qu’on voyait miroiter au bout des longues avenues.<br>
+            Un voyageur, arrivant dans la ville, aurait été frappé de l’air de santé des habitants, de l’activité qui régnait dans les rues. On fermait justement les académies de peinture, de musique, de sculpture, la bibliothèque, qui étaient réunies dans le même quartier et où d’excellents cours publics étaient organisés par sections peu nombreuses, - ce qui permettait à chaque élève de s’approprier à lui seul tout le fruit de la leçon. La foule, sortant de ces établissements, occasionna pendant quelques instants un certain encombrement ; mais aucune exclamation d’impatience, aucun cri ne se fit entendre. L’aspect général était tout de calme et de satisfaction.
+          </p>
+          <p style="text-align: right; text-decoration: underline;"><br>Les Cinq Cents Millions de la Bégum - Jules Verne (1879)</p><br>
+        </div>
+        <p>Relever les éléments descriptifs, comme pour faire l'illustration de chacun des villes<br>
+          > montrer qu'une dystopie relève de <strong>l'anticipation</strong> mais n'est pas toujours <strong>futuriste</strong>.<br>
+          +définitions d'auteur.ices utopie / dystopie ; associer chaque définition à son extrait.</p>
+        <br><p>Puis Illustrer la Cité de l'Acier, Cannon Fodder - Katsuhiro Ôtomo <i>(montage personnel)</i> :<br>
+        [Le film] " dépeint une journée dans la vie d'une cité organisée autour d'une unique activitée : tirer au canon sur un ennemi inconnu. De la science-fiction magistrale et surréaliste. "</p><br>
+        - Chercher éléments descriptifs communs avec La Cité de l'Acier
+        <iframe class="video" src="https://www.youtube.com/embed/gvoQjGWggrc?si=C25SJ4BkjYZjWoAy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc2" style="background-color: #003f5c;">
+      <button class="accordion-header" aria-expanded="false" aria-controls="content2">
+        <span>🌃 2 — Une Ville Fragmentée</span>
+        <span class="caret" aria-hidden="true"></span>
+      </button>
+      <div class="accordion-content" id="content2" role="region" aria-labelledby="acc2">
+          <p class="dominante">🖼️ analyse de l'image (animée)</p>&emsp;<p class="dominante">🎓 Identifier différents éléments dystopiques</p>
+          <p><strong>La ville est le reflet de la société</strong>. Dans les oeuvres dystopiques, elle s'envisage comme plus divisée que jamais.</p>
+          <div class="rubrique">
+            <img src="p38 questions.png" style="width: 92vw;">
+            <p>Objectif : La verticalité comme fondant l'inégalité entre les classes sociales</p>
+          </div>
+          <p>Montage vidéo : La ville dans les oeuvres dystopiques :</p>
+          <p><ul>
+            <li>Wall-E - Andrew Stanton, 2008</li>
+            <li>Blade Runner - Ridley Scott, 1982</li>
+            <li>Akira - Katsuhiro Ôtomo, 1988</li>
+            <li>Minority Report - Steven Spielberg, 2002</li>
+            <li>The Matrix - Lana & Lilly Wachowski, 1999 (Zion)</li>
+            <li>Inside - Playdead, 2016</li>
+          </ul></p>
+          <iframe class="video" src="https://www.youtube.com/embed/FAduxnyPxgk?si=nUopL46mzpMO422a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+          <div class="rubrique"><p>
+            élaborer en cours dialogué une carte mentale sur ce modèle, par 3 étapes<br>
+            <img src="carte mentale.png" style="width: 92vw;"><br><br>
+          </div>
+            Objectif de cette séance : Illustrer différents <strong>éléments dystopiques</strong>, l'utilisation de l'un deux constituants un <strong>attendu</strong> de l'évaluation
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion" id="acc3" style="background-color: #665191;">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content3">
+        <span>📕 3 — Point de langue : Novlangue (1984)</span>
+        <span class="caret" aria-hidden="true"></span>
+      </button>
+      <div class="accordion-content" id="content3" role="region" aria-labelledby="acc3">
+        <p class="dominante">📕 langue / grammaire</p>&emsp;<p class="dominante">🎓 Pratiquer les dérives dystopiques du langage</p>
+        <p style="color: white;"><strong>objectif</strong> : montrer que le lexique, c'est aussi la faculté à <strong>penser</strong> (cf. sémiotique)</p>
+        <div class="rubrique">
+          <p style="text-decoration: underline; text-align: center; font-weight: 900;">Euphémisme</p><br>
+          <p class="extrait">" Un grand nombre [de mots] étaient des euphémismes. Des mots comme, par exemple : <i>joiecamp</i> (camp de travaux forcés) ou <i>minipax</i> (ministère de la Paix, c'est-à-dire ministère de la Guerre) signifiaient exactement le contraire de ce qu'ils paraissaient vouloir dire. "</p><br>
+          1. Reliez ces mots inspirés du novlangue à leur définition :<br>
+          - travailplaisir *** bavardages<br>
+          - oiseaumélodie *** heures de colle<br>
+          - libertemps *** punition<br>
+          - murmuresilence *** sonnerie<br><br>
+          2. Inventez un mot sur ce modèle<br>
+          <i>ex. clairinfo = propagande officielle / Ministère de l'Amour = Ministère de la Torture</i>
+        </div>
+        <div class="rubrique">
+          <p style="text-decoration: underline; text-align: center; font-weight: 900;">Comparaison</p><br>
+          <p class="extrait" style="text-align: center;">
+            LA GUERRE C'EST LA PAIX<br>
+            LA LIBERTÉ C'EST L'ESCLAVAGE<br>
+            L'IGNORANCE C'EST LA FORCE<br><br>
+          </p>
+          1. Sur quelle figure de style sont fondées ces affirmations ?<br>
+          <i>Une comparaison, avec comme outil de comparaison "C'EST"</i><br><br>
+          2. Comment changent-elles le sens des mots ?<br>
+          <i>Elles font dirent leur contraire</i>
+        </div>
+        <div class="rubrique">
+          <p style="text-decoration: underline; text-align: center; font-weight: 900;">Verbe</p><br>
+          <p class="extrait">Le mot <i>pensée</i> par exemple, n'existait pas en novlangue. Il était remplacé par <i>penser</i> [...]</p><br>
+          1. Quelle est la différence de <strong>classe grammaticale</strong> entre <i>pensée</i> et <i>penser</i> ?<br>
+          <i>pensée : nom commun</i><br>
+          <i>penser : verbe à l'infinitif</i><br><br>
+          2. Donnez deux <strong>adjectifs qualificatifs</strong> de votre choix au mot pensée<br>
+          <i>ex. une pensée noire, une pensée libre</i><br><br>
+          3. En s'appuyant sur le sens des mots, que permet d'exprimer de plus <i>pensée</i> que <i>penser</i> ?<br>
+          <i>pensée : concept abstrait, que l'on peut qualifier et construire<br>
+          penser : action immédiate, ponctuelle</i>
+        </div>
+        <div class="rubrique">
+          <p style="text-decoration: underline; text-align: center; font-weight: 900;">Antonyme</p>
+          <br><p class="extrait">De plus, et ceci s'appliquait encore en principe à tous les mots de la langue, n'importe quel mot pouvait prendre la forme négative par l'addition du préfixe <i>in</i>. On pouvait en renforcer le sens par l'addition du préfixe <i>plus</i>, ou, pour accentuer davantage, du préfixe <i>doubleplus</i>. Ainsi <i>incolore</i> signifie " pâle ", tandis que <i>pluscolore</i> et <i>doublepluscolore</i> signifient respectivement " très coloré " et " superlativement coloré ".</p><br>
+          <p>1. En suivant la méthode de l'extrait, élaborez la forme négative du mot <i>bon</i><br>
+          <i>inbon</i><br><br>
+          2. Avec le résultat obtenu, a-t-on encore besoin de son contraire, <i>mauvais</i> ?<br>
+          <i>non, mauvais devient inutile</i><br><br>
+          3. Comment appelle-t-on deux mots de sens opposés, comme <i>bon</i> et mauvais ?<br>
+          <i>Des antonymes</i><br><br>
+          4. D'après vous, pourquoi c'est le mot de sens <strong>négatif</strong> qui est supprimé par le Parti ?<br>
+          <i>ex. Afin d'empêcher de former un pensée dissidente.</i></p>
+        </div>
+        <p style="color: white;">
+          Donner son titre à chacun des exercices pour comprendre les stratégies grammaticales du Parti pour restreindre le langage.<br><br>
+        </p>
+        <div class="rubrique">
+          <p>Bilan intermédiaire pour cette séance :</p>
+          <u><strong>LES PRINCIPES DU NOVLANGUE</strong></u><br><br>
+          <p class="extrait">Le vocabulaire du novlangue était construit de telle sorte qu'il pût fournir une expression exacte, et souvent très nuancée, aux idées qu'un membre du Parti pouvait, à juste titre, désirer communiquer. Mais il excluait toutes les autres idées et même les possibilités d'y arriver par des méthodes indirectes. L'invention de mots nouveaux, l'élimination surtout des mots indésirables, la suppression dans les mots restants de toute signification secondaire, quelle qu'elle fît , contribuaient à ce résultat.<br>
+          Ainsi le mot <i>libre</i> existait encore en novlangue, mais ne pouvait être employé que dans des phrases comme " le chemin est libre ". Il ne pouvait être employé dans le sens ancien de " liberté politique " ou de " liberté intellectuelle ". Les libertés politique et intellectuelle n'existaient en effet plus, même sous forme de concept. Elles n'avaient donc nécessairement pas de nom.<br>
+          En dehors du désir de supprimer les mots dont le sens n'était pas orthodoxe, l'appauvrissement du vocabulaire était considéré comme une fin en soi et on ne laissait subsister aucun mot dont on pouvait se passer. Le novlangue était destiné, non à étendre, mais à diminuer le domaine de la pensée, et la réduction au minimum du choix des mots aidait indirectement à atteindre ce but.</p>
+          <p style="text-align: right; text-decoration: underline;">1984 - George Orwell (1949)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc4" style="background-color: #a05195;">
+      <button class="accordion-header" aria-expanded="false" aria-controls="content4">
+        <span>🔎 4 — Rendre une ville dystopique</span>
+        <span class="caret" aria-hidden="true"></span>
+      </button>
+      <div class="accordion-content" id="content4" role="region" aria-labelledby="acc4">
+        <p class="dominante">✒️ (ré)écriture en groupe</p>&emsp;<p class="dominante">🎓 Donner à un texte utopique des caractéristiques dystopiques</p>
+        <div class="rubrique">
+          <p>Exercice à partir d'un texte sur la ville <strong>utopique</strong> : la rendre <strong>dystopique</strong> par "enquête collaborative"
+          <ul><p>Avec fiches-tuto :</p>
+            <li>caviardage</li>
+            <li>post-its</li>
+            <li>réécriture</li>
+          </ul>
+          > Pour mieux comprendre le dispositif, voir dossier <strong><u>atelier.pdf</u></strong></p>
+        </div>
+        <div class="rubrique">
+          <p class="extrait">
+            <br><br>La ville est reliée à la rive opposée par un pont qui n'est pas soutenu par des piliers ou des pilotis, mais par un ouvrage en pierre d'une fort belle courbe. Il se trouve dans la partie de la ville qui est la plus éloignée de la mer, afin de ne pas gêner les vaisseaux qui longent les rives. Une autre rivière, peu importante mais paisible et agréable à voir, a ses sources sur la hauteur même où est située Amaurote, la traverse en épousant la pente et mêle ses eaux, au milieu de la ville, à celles de l'Anydre. Cette source, qui est quelque peu en dehors de la cité, les gens d'Amaurote l'ont entourée de remparts et incorporée à la forteresse, afin qu'en cas d'invasion elle ne puisse être ni coupée ni empoisonnée. De là, des canaux en terre cuite amènent ses eaux dans les différentes parties de la ville basse. Partout où le terrain les empêche d'arriver, de vastes citernes recueillent l'eau de pluie et rendent le même service.<br>
+            [...]<br>
+            Chaque maison a deux portes, celle de devant donnant sur la rue, celle de derrière sur le jardin. Elles s'ouvrent d'une poussée de main, et se referment de même, laissant entrer le premier venu. Il n'est rien là qui constitue un domaine privé. Ces maisons en effet changent d'habitants, par tirage au sort, tous les dix ans. Les Utopiens entretiennent admirablement leurs jardins, où ils cultivent des plants de vigne, des fruits, des légumes et des fleurs d'un tel éclat, d'une telle beauté que nulle part ailleurs je n'ai vu pareille abondance, pareille harmonie. Leur zèle est stimulé par le plaisir qu'ils en retirent et aussi par l'émulation, les différents quartiers luttant à l'envie à qui aura le jardin le mieux soigné. Vraiment, on concevrait difficilement, dans toute une cité, une occupation mieux faite pour donner à la fois du profit et de la joie aux citoyens et, visiblement, le fondateur n'a apporté à aucune autre chose une sollicitude plus grande qu'à ces jardins.
+          </p>
+          <p style="text-align: right; text-decoration: underline;">Utopie - Thomas More (1516)</p><br>
+          J'hésite à ré-employer le texte de France-Ville de (cf. séance 1) pour que les élèves n'aient pas à découvrir entièrement un nouveau texte.
+        </div>
+        <div class="rubrique">
+          <p style="text-align: center; text-decoration: underline; font-weight: 900;">Débat</p>
+          <img src="push button education - Arthur Radebaugh.webp" style="width: 92vw;">
+          <p style="text-align: justify;"><strong>PUSH-BUTTON EDUCATION</strong> Les écoles de demain seront plus bondées ; les professeurs seront proportionnellement moins nombreux. Des projets pour une école "presse-bouton" ont déjà été proposés par le Dr. Simon Ramo, membre de la faculté de science à l'Institut de Technologie de Californie. L'enseignement se fera grâce à des films audio et des machines à tabuler* mécaniques. Les élèves signifieront leur présence et répondront aux questions en pressant des boutons. Des machines spéciales seront "ajustées" à chacun des étudiants afin qu'ils puissent avancer aussi rapidement que ces capacités lui permettent. Des bilans de progression, eux aussi sauvegardés par la machine, serait envoyés régulièrement à des professeurs expérimentés, et de l'aide personnalisée serait disponible au besoin. <i>(traduction personnelle)</i></p><br>
+          <p>*tabuler : mettre sous forme de tableau ou de table des données</p>
+          <p style="text-align: right; text-decoration: underline;">Closer than we think : « push button éducation » Arthur Radebaugh (1958)</p><br>
+          <p>Quelle matière scolaire est présentée dans le document ?</p>
+          <p style="text-align: right;">Pensez-vous que cela serait efficace avec toutes les matières ? Si oui, comment ? Si non, pourquoi ?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc5" style="background-color: #d45087;">
+      <button class="accordion-header" aria-expanded="false" aria-controls="content5">
+        <span>🗣️ 5 — Imaginer, repérer la Dystopie</span>
+        <span class="caret" aria-hidden="true"></span>
+      </button>
+      <div class="accordion-content" id="content5" role="region" aria-labelledby="acc8">
+        <p class="dominante">🗣️ oral / débat (par l'image)</p>&emsp;<p class="dominante">🎓 Imaginer par induction des particularités dystopiques</p>
+        <p>⚠️ groupes à préparer en amont</p>
+        <h2>Trois Ateliers :</h2>
+        <div class="rubrique">
+          <p>1ères de couverture 1984 - George Orwell</p>
+          <img src="3 1984.jpg" style="width: 45vw;"
+          ><img src="4 1984.avif" style="width: 47vw;">
+          <img src="1 1984 Bound Book.jpg" style="width: 92vw;"
+          ><img src="2 1984 Bound Book.jpg" style="width: 92vw;">
+          <br><a href="https://malmo.se/Uppleva-och-gora/Fritidsaktiviteter/Motesplatser/Kulturhyllan/Dawit-Isaak-biblioteket/The-Bound-Books-Project.html">The Bound Books Project - The Dawit Isaak Library</a>
+          <br><a href="https://youtu.be/s3HlGYbbBI4?si=F_Shmu1Odjo_atR0">1984 is Unreadable - impossible to read, impossible to ignore</a><br><br>
+          <p><strong><u>Institutionnalisation après la mise en commun :</u></strong><br>
+          <a href="https://youtu.be/VtvjbmoDx-I?si=P6uPCKa3QGUibys1">Publicité 1984 Apple</a><br>
+          Question-Débat : Le message de 1984 est-il compatible avec la vente d'un produit ?</p>
+        </div>
+        <div class="rubrique">
+          <p>1ères de couverture Fahrenheit 451 - Ray bradbury</p>
+          <img src="1 Fahrenheit 451 - pompier.jpg" style="width: 48.82vw;"
+          ><img src="3 Fahrenheit 451 - Andrew Hankinson.jpeg" style="width: 43.18vw;"
+          ><img src="2 Fahrenheit 451 - Elisabeth Perez.png" style="width: 92vw;">
+          <p><strong><u>Institutionnalisation après la mise en commun :</u></strong><br>
+          Extrait de <a href="https://www.radiofrance.fr/franceinter/podcasts/ca-peut-pas-faire-de-mal/fahrenheit-451-le-roman-culte-de-ray-bradbury-5441450"><i>Ça peut pas faire de mal</i></a> :<br>
+          Extrait du film de Truffaut et Interview de Ray Bradbury (15:30 à 16:22)</p>
+        </div>
+        <div class="rubrique">
+          1ères de couverture Le Meilleur des Mondes - Aldous Huxley<br>
+          <img src="1 Le Meilleur des Mondes - Aldous Huxley.jpg" style="width: 30.3vw;"
+          ><img src="2 Le Meilleur des Mondes - Aldous Huxley.jpg" style="width: 30.3vw;"
+          ><img src="3 Le Meilleur des Mondes - Aldous Huxley.jpeg" style="width: 31.4vw;">
+        </div>
+        <div class="rubrique">
+          <p>Chaque groupe présente à tour de rôle devant la classe :<br>
+          <ul>
+            <li>ses premières de couvertures</li>
+            <li>l'élément dystopique identifié</li>
+            <li>la première de couverture préférée et pourquoi</li>
+          </ul>
+          Puis il y a une phase d'institionnalisation en dessous de chaque rubrique (extraits)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc6" style="background-color: #f95d6a;">
+      <button class="accordion-header" aria-expanded="false" aria-controls="content6">
+        <span>✍️ 6 — Évaluation sommative</span>
+        <span class="caret" aria-hidden="true"></span>
+      </button>
+      <div class="accordion-content" id="content6" role="region" aria-labelledby="acc5">
+        <p class="dominante">✒️ écriture</p>&emsp;<p class="dominante">🎓 Décrire au brouillon son univers dystopique</p>
+        <p>⚠️ Rappeler que le brouillon sera à rendre avec la production écrite pour l'évaluation finale</p>
+        <div class="rubrique">
+          <p>
+            <strong><u>Consignes :</u></strong><br>
+            Décrire une ville de <strong>rêve</strong> qui aurait tourné au <strong>cauchemar</strong>. Elle devra comporter au moins un <strong>élément dystopique</strong> (cf. séance 2), qui la rend injuste et inégalitaire. Vous décrirez comment la <strong>vie de ses habitants</strong> s'en trouve impactée. <strong>Deux sujets</strong> (différenciation) :<br>
+            <p style="font-weight: 900; font-size: 2vw;">1. Voyageur Hypothétique</p>
+            Votre texte débutera par : <i>" Si un voyageur arrivait à... "</i> ou <i>" Si une voyageuse arrivait à... "</i> (cf. extraits Jules Verne)<br>
+            Vous présenterez cette ville comme si votre <strong>voyageur hypothétique</strong> la découvrait pour la première fois.<br><br>
+            <p style="font-weight: 900; font-size: 2vw;">2. Rencontre d'un Témoin</p>
+            Votre narrateur rencontre un <strong>témoin</strong> de l'évolution de la ville.<br>
+            Il apprendra au narrateur le <strong>passé utopique</strong> de la ville, puis lui montrera son <strong>présent dystopique</strong>.<br><br><br>
+            Pour vous aider, vous pouvez utiliser la carte mentale faites en séance 2 et d'autres oeuvres de votre propre répertoire.<br>
+            Posez-vous ces <strong>questions-étapes</strong> <i>(circulation pour les poser aux élèves lors de la séance)</i> :
+            <ul>
+              <li>1. Qu'avait d'utopique cette ville ?</li>
+              <li>2. Qu'est-elle devenue ? Comment ? Pourquoi ?</li>
+              <li>3. Quelles conséquences dystopiques ?</li>
+            </ul>
+            Pour aujourd'hui, vous écrirez un <strong>brouillon</strong>, ni l'orthographe, ni la présentation ne sont votre priorité.</p>
+            Pour la grille, je me suis d'avantage inspiré des attendus du DNB : <a href="https://lettres.ac-normandie.fr/?Echelle-descriptive-redactions-au-DNB">échelle descriptive - sujet d'imagination DNB</a>
+          </p>
+        </div>
+        <div class="rubrique">
+          <img src="grille d'auto-évaluation.png" style="width: 92vw;">
+        </div>
+        <div class="rubrique">
+          <p style="font-weight: 900; text-align: center;">La Grille de l'enseignant, avec les points prévisionnels :</p>
+          <img src="grille d'évaluation.png" style="width: 92vw;">
+        </div>        
+      </div>
+      <div class="accordion-content" id="content6" role="region" aria-labelledby="acc6">
+      </div>
+    </div>
+
+    <div class="accordion" id="acc7" style="background-color: #ff7c43;">
+      <button class="accordion-header" aria-expanded="false" aria-controls="content7">
+        <span>📚 7 — Place de la littérature en Dystopie</span>
+        <span class="caret" aria-hidden="true"></span>
+      </button>
+      <div class="accordion-content" id="content7" role="region" aria-labelledby="acc7">
+        <p class="dominante">📖 lecture</p>&emsp;<p class="dominante">👁️ Situer la littérature en dystopie (métalittérarité)</p>
+        <div class="rubrique">
+          <p class="extrait"><br><br>
+                        <u><strong>Chapitre 2</strong></u><br><br>
+            <i>Des bébés d'une caste inférieure sont soumis à une "leçon"</i><br><br>
+            — À présent, tournez-les de façon qu'ils puissent voir les fleurs et les livres.<br>
+            Tournés, les bébés firent immédiatement silence, puis ils se mirent à ramper vers ces masses de couleurs brillantes, ces formes si gaies et si vives sur les pages blanches. Tandis qu'ils s'en approchaient, le soleil se dégagea d'une éclipse momentanée où l'avait maintenu un nuage. Les roses flamboyèrent comme sous l'effet d'une passion interne soudaine ; une énergie nouvelle et profonde parut se répandre sur les pages luisantes des livres. Des rangs des bébés rampant à quatre pattes s'élevaient de petits piaillement de surexcitation, des gazouillements et des sifflotements de plaisir.<br>
+            Le Directeur se frotta les mains :<br>
+            — Excellent ! dit-il. On n'aurait guère fait mieux si ç'avait été arrangé tout exprès.<br>
+            Les rampeurs les plus alertes étaient déjà arrivés à leur but. De petites mains se tendirent, incertaines, touchèrent, saisirent, effeuillant les roses transfigurées, chiffonant les pages illuminées des livres. Le directeur attendit qu'ils fussent tous joyeusement occupés puis :<br>
+            — Observez bien, dit-il. Et, levant la main, il donna le signal.<br>
+            L'Infirmière-Chef, qui se tenait à côté d'un tableau de commandes électriques à l'autre bout de la pièce, abaissa un petit levier.<br>
+            Il y eut une explosion violente. Perçante, toujours plus perçante, une sirène siffla. Des sonneries d'alarme retentirent, affolantes.<br>
+            Les enfants sursautèrent, hurlèrent ; leur visage était distordu de terreur.<br>
+            — Et maintenant, cria le Directeur, (car le bruit était assourdissant), maintenant, nous passons à l'opération qui a pour but de faire pénétrer la leçon bien à fond, au moyen d'une légère secousse électrique.<br>
+            Il agita de nouveau la main, et l'Infirmière-Chef abaissa un second levier. Les cris des enfants changèrent soudain de ton. Il y avait quelque chose de désespéré, de presque dément, dans les hurlements perçants et spasmodiques qu'ils lancèrent alors. Leur petit corps se contractait et se raidissait : leur membres s'agitaient en mouvement saccadés, comme sous le tiraillement de fils invisibles.<br>
+            — Nous pouvons faire passer le courant dans toute cette bande de plancher, glapit le Directeur en guise d'explication, mais cela suffit, dit-il comme signal à l'infirmière.<br>
+            Les explosions cessèrent, les sonneries s'arrêtèrent, le hurlement de la sirène s'amortit, descendant de ton en ton jusqu'au silence. Les corps raidis et contractés se détendirent, et ce qui avait été les sanglots et les abois de fou furieux en herbe se répandit de nouveau en hurlements normaux de terreur ordinaire.<br>
+            — Offrez-leur encore une fois les fleurs et les livres.<br>
+            Les infirmières obéirent ; mais à l'approche des roses, à la simple vue de ces images gaiement coloriés du minet, du cocorico et du mouton noir qui fait bêê, bêê, les enfants se reculèrent avec horreur ; leurs hurlements s'accrurent soudain en intensité.<br>
+            — Observez, dit triomphalement le Directeur, observez.<br>
+            Les livres et les bruits intenses, les fleurs et les secousses électriques, déjà, dans l'esprit de l'enfant, était liés de façon compromettante ; et, au bout de deux cents répétitions de la même leçon ou d'une autre semblable, ils seraient mariés indissolublement. Ce que l'homme a uni, la nature est impuissante à le séparer.<br>
+            — Ils grandiront avec ce que les psychologues appelaient une haine " instinctive " des livres et des fleurs. Des réflexes inaltérablement conditionnés. Ils seront à l'abri des livres et de la botanique pendant toute leur vie.<br>
+            <p style="text-align: right; text-decoration: underline;"><br>Le Meilleur des Mondes - Aldous Huxley (1932)</p><br>
+        </div>
+        <div class="rubrique">
+          
+          <p class="extrait"><br><br>
+            <u><strong>La Maison de la vieille femme</strong></u><br><br>
+            Extrait de <a href="https://www.radiofrance.fr/franceinter/podcasts/ca-peut-pas-faire-de-mal/fahrenheit-451-le-roman-culte-de-ray-bradbury-5441450"><i>Ça peut pas faire de mal</i></a> - Guillaume Galienne<br>
+            de 16:50 à 21:45
+          <p style="text-align: right; text-decoration: underline;"><br>Fahrenheit 451 - Ray Bradbury (1953)</p><br>
+          </p> 
+        </div>
+        <div class="rubrique">
+          <p class="extrait"><br><br>
+                        <u><strong>Le maître du cinéma</strong></u><br><br>
+            <i>Après la Troisième Guerre mondiale, les dirigeants se réunissent pour imaginer une société sans guerre...</i><br><br>
+            Les chefs d'États réunis dans le bunker cherchèrent donc comment éradiquer une fois pour toutes le mal. Ils finirent par convenir qu'il fallait " sectionner " plus profondément.<br>
+            Un autre dirigeant, Paul Charabouska, un petit homme brun et frisé, lança une idée. À son avis il fallait supprimer le terreau même du nationalisme, du fanatisme et de l'intégrisme, à savoir... l'enseignement même de l'Histoire.<br>
+            L'idée parut tout d'abord totalement saugrenue aux participants de la réunion au sommet. Gommer la mémoire pour ne pas répéter les erreurs semblait un véritable contresens.<br>
+            Pourtant...<br>
+            — L'Histoire, telle qu'elle est étudiée dans les écoles, développa-t-il, transporte essentiellement la valorisation des victoires, donc des guerres, des massacres et leurs listes de martyrs, de vengeances nécessaires, de représailles logiques, de rancoeurs entre les peuples, de trahison entre alliés, d'enjeux territoriaux mesquins, de traités non respectés, de rivalités de princes, de rois abusifs, et au final une glorification des atrocités qui parlent d'héroïsme, et dont on se transmet les noms et les dates de génération en génération.<br>
+            L'enseignement de l'Histoire n'était pas un l'enseignement de l'amour, mais la glorification des nationalismes.<br>
+            Vue sous cet angle, l'idée paraissait faire sens.<br>
+            <p style="text-align: right; text-decoration: underline;"><br>Paradis sur mesure - Bernard Werber (2008)</p><br>
+          </p>
+          Le narrateur est-il entièrement d'accord avec l'analyse faite par les chefs d'États ? Appuyez-vous sur les verbes pour justifier votre réponse.<br><br>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc8" style="background-color: #ffa600;">
+      <button class="accordion-header" aria-expanded="false" aria-controls="content8">
+        <span>✍️ 8 — Évaluation sommative</span>
+        <span class="caret" aria-hidden="true"></span>
+      </button>
+      <div class="accordion-content" id="content8" role="region" aria-labelledby="acc8">
+        <p class="dominante">✒️ écriture</p>&emsp;<p class="dominante">🎓 Achever de décrire son univers dystopique</p>
+        <p>⚠️ reprise du brouillon qui servira aussi à l'évaluation</p>
+        <div class="rubrique">
+          <p>
+            <strong><u>Consignes :</u></strong><br>
+            Décrire une ville qui aurait tourné au <strong>cauchemar</strong>. Elle devra comporter au moins un <strong>élément dystopique</strong> (cf. séance 2), qui la rend injuste et inégalitaire. Vous décrirez comment la <strong>vie de ses habitants</strong> s'en trouve impactée.<br>
+            Votre texte débutera par : <i>" Si un voyageur arrivait à... "</i> (cf. extraits Jules Verne)<br>
+            Vous présenterez cette ville comme si le voyageur hypothétique <strong>la découvrait pour la première fois</strong>.<br><br>
+            Pour vous aider, vous pouvez utiliser la carte mentale faites en séance 2 et d'autres oeuvres connues.<br>
+            Vous rendrez à la fois votre <strong>brouillon</strong> et votre <strong>texte fini</strong>, chacun avec votre nom.</p>
+          </p>
+        </div>
+        <div class="rubrique">
+          <img src="grille d'auto-évaluation.png" style="width: 92vw;">
+        </div>
+        <div class="rubrique">
+          <p style="font-weight: 900; text-align: center;">La Grille de l'enseignant, avec les points prévisionnels :</p>
+          <img src="grille d'évaluation.png" style="width: 92vw;">
+        </div>     
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion" id="acc9" style="background-color: #5e5e5e;">
+      <button class="accordion-header" aria-expanded="false" aria-controls="content9">
+        <span>🎭 X — Théâtre et mises en scènes (annulée)</span>
+        <span class="caret" aria-hidden="true"></span>
+      </button>
+      <div class="accordion-content" id="content9" role="region" aria-labelledby="acc9">
+        <p class="dominante">🖼️ analyse de l'image</p>&emsp;<p class="dominante">🎓 Intégrer le spectateur / lecteur dans la dystopie</p>
+        <p><i>cette séance est la plus <strong>versatile</strong> ; m'attendant à ce que l'on prenne du retard, elle est potentiellement <strong>supprimable</strong>. (même si le théâtre, en plus avec des comédiennes que j'ai eu comme professeures, me touche particulièrement)</i></p>
+        <ul>
+          <li>Quand viendra la vague - Alice Zeniter</li>
+          <a href="https://www.animacompagnie.fr/assets/pdf/Dossier_QVLV_14_04_21.pdf">Fiche de Présentation - Anima Compagnie</a>
+          <li>Viendra le temps du Feu - Wendy Delorme (création Julia Henning et Didier Lastère)</li>
+          <a href="https://www.latetedebabel.com/_files/ugd/5b3cd6_61dc9c4579194b7c921e4d5a50dfcb1f.pdf">Fiche de Présentation - La Tête de Babel</a>
+        </ul>
+        <p>📕 petit point sur l'utilisation du futur dans les 2 titres</p>
+        <div class="rubrique">
+          Travail de réflexion sur la scénographie
+          <img src="scénographie Quand viendra la Vague.png" style="width: 92vw;"><br>
+          <p style="text-align: right; text-decoration: underline;">Quand viendra la Vague - Alice Zeniter (Anima Compagnie)</p>
+          1. En se basant sur le titre, émettez une hypothèse sur l'utilisation d'un rocher sur scène.<br>
+          2. Pourquoi l'image de l'équilibre est pertinente quand l'on aborde l'écologie ?<br><br>
+          <img src="scénographie Viendra le Temps du Feu.png" style="width: 92vw;"><br>
+          <p style="text-align: right; text-decoration: underline;">Viendra le Temps du Feu - Wendy Delorme (La Tête de Babel)</p>
+          1. Est-ce qu'il y a vraiment une séparation plateau/places ici ?<br>
+          2. Quel impact sur le spectateur ?
+        </div>
+      </div>
+    </div>
+
+  <script>
+    document.querySelectorAll('.accordion').forEach(acc => {
+      const btn = acc.querySelector('.accordion-header');
+      const content = acc.querySelector('.accordion-content');
+
+      content.style.maxHeight = '0px';
+      btn.setAttribute('aria-expanded', 'false');
+
+      btn.addEventListener('click', () => {
+        const isOpen = acc.classList.toggle('open');
+
+        if (isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          content.style.maxHeight = '0px';
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      
+      new ResizeObserver(() => {
+        if (acc.classList.contains('open')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      }).observe(content);
+    });
+  </script>
+</body>
+</html>
